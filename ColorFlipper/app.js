@@ -8,9 +8,16 @@ btn.addEventListener('click', function(){
     const randomColor = getRandomColor();
     document.body.style.backgroundColor = colors[randomColor];
     color.textContent = colors[randomColor];
+    btn.style.backgroundColor = reverseString(colors[randomColor]);
 });
 
 
 function getRandomColor(){
     return Math.floor(Math.random() * (colors.length));
+}
+
+function reverseString(str) {
+    tempStr= str.split("").reverse().join("");
+    finalStr = '#'+tempStr.slice(0,-1);
+    return finalStr;
 }

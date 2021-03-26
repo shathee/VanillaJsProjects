@@ -13,9 +13,16 @@ btn.addEventListener('click', function(){
     
     document.body.style.backgroundColor = randomColor;
     color.textContent = randomColor;
+    btn.style.backgroundColor = reverseString(randomColor);
 });
 
 
 function getRandomItem(){
     return Math.floor(Math.random() * (hexItem.length));
+}
+
+function reverseString(str) {
+    tempStr= str.split("").reverse().join("");
+    finalStr = '#'+tempStr.slice(0,-1);
+    return finalStr;
 }
